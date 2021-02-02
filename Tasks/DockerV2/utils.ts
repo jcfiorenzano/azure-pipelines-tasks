@@ -29,7 +29,7 @@ export function writeTaskOutput(commandName: string, output: string): string {
 export function parseStringForDockerIds(output: string, idStringMatch: string = "Successfully built "): string[] {
     let regex = new RegExp(idStringMatch +"[\\s\\S]*", "g");
     let idArrayFunction = () => {
-        let parsedOutput: string[] = output.match(regex) as string[];
+        let parsedOutput: string[] = output.match(regex);
         for ( var i = 0; i < parsedOutput.length; i++ ) {
              parsedOutput[i] = parsedOutput[i].replace(idStringMatch, '');
         };
