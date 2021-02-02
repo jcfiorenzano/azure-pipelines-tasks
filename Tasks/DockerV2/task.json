@@ -1,7 +1,7 @@
 {
-    "id": "E28912F1-0114-4464-802A-A3A35437FD16",
-    "name": "Docker",
-    "friendlyName": "Docker",
+    "id": "EEBFB007-6B83-4270-837A-6FA584EA4E69",
+    "name": "DockerBuildOutputImages",
+    "friendlyName": "DockerBuildOutputImages",
     "description": "Build or push Docker images, login or logout, start or stop containers, or run a Docker command",
     "helpUrl": "https://aka.ms/azpipes-docker-tsg",
     "helpMarkDown": "[Learn more about this task](https://go.microsoft.com/fwlink/?linkid=848006) or [see the Docker documentation](https://docs.docker.com/)",
