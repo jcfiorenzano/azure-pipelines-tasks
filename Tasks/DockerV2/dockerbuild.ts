@@ -70,6 +70,10 @@ export function run(connection: ContainerConnection, outputUpdate: (data: string
     let output = "";
     return dockerCommandUtils.build(connection, dockerFile, commandArguments, labelArguments, tagArguments, (data) => output += data).then(() => {
         let taskOutputPath = utils.writeTaskOutput("build", output);
+        let dockerIds = utils.parseStringForDockerIds(output);
+        // magic call to write the environment variable, whatever that actually is.
+        // looks like we might be able to use setVariable from the basic task library; see https://github.com/microsoft/azure-pipelines-task-lib/blob/master/node/task.ts#L155
+        // tl.setVariable(name: string, val: string, secret: boolean = false, isOutput: boolean = false)
         outputUpdate(taskOutputPath);
     });
 }
