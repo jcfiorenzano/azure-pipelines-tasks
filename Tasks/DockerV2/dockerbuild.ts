@@ -72,8 +72,8 @@ export function run(connection: ContainerConnection, outputUpdate: (data: string
         let taskOutputPath = utils.writeTaskOutput("build", output);
         let dockerIds = utils.parseStringForDockerIds(output);
         // magic call to write the environment variable, whatever that actually is.
-        tl.setVariable('BuiltDockerImagesIds', dockerIds.join(';'), false, true);
-        tl.setVariable('BuiltDockerImageName', imageNames.join(';'), false, true);
+        tl.setVariable('BuiltDockerImagesIds', dockerIds.join(';'), false);
+        tl.setVariable('BuiltDockerImageName', imageNames.join(';'), false);
         outputUpdate(taskOutputPath);
     });
 }
